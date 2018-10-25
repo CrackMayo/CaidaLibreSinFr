@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Oct 25 09:39:50 2018
+Created on Thu Oct 25 10:02:25 2018
 
 @author: CrackMayo
 """
-
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -16,3 +15,18 @@ dt=0.01
 t=np.arange(0,1,dt)
 y=-g*t**2/2+v*t+y
 plt.plot(t,y)
+plt.show()
+
+
+Vt=np.array(t)
+Vy=np.array(y)
+while t.all()<1:
+    v=-g*dt+v
+    y=v*dt+y
+    t=t+dt
+    Vy=np.append(Vy,y)
+    Vt=np.append(Vt,t)
+    print(t)
+    
+plt.figure(2)
+plt.plot(Vt,Vy)
