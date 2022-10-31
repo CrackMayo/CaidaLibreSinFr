@@ -9,10 +9,13 @@ import matplotlib.pyplot as plt
 
 # algoritmo para dibujar caida libre
 
+print("-------------------------------------Caida libre sin friccion-------------------------------------")
+
+
 y=10
 v=0
 t=0
-g=3.721
+g = float(input("Ingrese la gravedad que desea utilizar: "))
 dt=0.01
 t=np.arange(0,1,dt)
 y=-g*t**2/2+v*t+y
